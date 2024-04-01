@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 def scan_website(url):
     try:
-        # Send an HTTP request to the specified URL
+        # It Send's an HTTP request to the specified URL
         response = requests.get(url)
 
         # Check if the request was successful (status code 200)
@@ -13,19 +13,24 @@ def scan_website(url):
 
             # Example: Check for the presence of forms on the page
             forms = soup.find_all('form')
+# when we use find_all it automatically scans everything and no need to mention the specific url path of the website.
             if forms:
                 print("Potential forms found on the page.")
             else:
                 print("No forms found on the page.")
 
-            # You can add more checks based on your security criteria
+            # You can add more checks based on your security criteria these was a basic code writen to just check the form wheater they are present or not.
 
         else:
-            print(f"Failed to retrieve the page. Status code: {response.status_code}")
+            print("Failed to retrieve the page. Status code: 200" )
+            # response.status_code prints: status code 200 as the request is successfull
 
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print("An error occurred: code 404")
+#If the given url is invaild the above print statement will exicuted.
 
-# Example usage
-url_to_scan = 'https://example.com'
-scan_website(url_to_scan)
+# run the code
+url_to_scan = (" Entre  website url for Scan: ")
+
+scan_website(input(url_to_scan))
+#you need to provide url in terminal as we used input method.

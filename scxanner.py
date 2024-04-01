@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+# the BeautifulSoup must be installed in older versions now it has to be installed as a new version BeautifulSoup4.
+#Do this pip install comand line and install the modules and packages.
 
 def scan_website(url):
     try:
